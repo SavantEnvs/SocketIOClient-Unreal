@@ -1,0 +1,10 @@
+project: savantenvs/SocketIOClient-Unreal
+target: fuzz-packet
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz-packet/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_packet
+    libfuzzer: true
+    timeout: 5
+    dictionary: /mayhem/mayhem/fuzz-packet/fuzz-packet.dict
